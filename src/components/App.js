@@ -5,18 +5,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      para: "",
+      show: false,
     };
   }
 
   generatePara = () => {
     this.setState({
-      para: (
-        <p id="para">
-          Hello, I've learnt to use the full-stack evaluation tool. This makes
-          me so happy
-        </p>
-      ),
+      show: true,
     });
   };
 
@@ -26,7 +21,12 @@ class App extends Component {
         <button id="click" onClick={this.generatePara}>
           Click
         </button>
-        {this.state.para}
+        {this.state.show ? (
+          <p id="para">
+            Hello, I've learnt to use the full-stack evaluation tool. This makes
+            me so happy
+          </p>
+        ) : null}
       </div>
     );
   }
